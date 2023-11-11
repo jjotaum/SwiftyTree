@@ -6,6 +6,5 @@
 //
 
 import Foundation
-
-print("Hello, World!")
+SwiftyTree.main()
 

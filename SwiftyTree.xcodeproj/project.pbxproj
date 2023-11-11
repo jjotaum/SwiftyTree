@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E90023FD2AE4159C00CAE8AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90023FC2AE4159C00CAE8AB /* main.swift */; };
+		E913EAD12AE5D2BA00285CE9 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = E913EAD02AE5D2BA00285CE9 /* ArgumentParser */; };
+		E913EAD52AE5D31600285CE9 /* SwiftyTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913EAD42AE5D31600285CE9 /* SwiftyTree.swift */; };
+		E960AEAC2AE5D600002BBB0F /* TreeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E960AEAB2AE5D600002BBB0F /* TreeGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,8 @@
 /* Begin PBXFileReference section */
 		E90023F92AE4159C00CAE8AB /* SwiftyTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftyTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90023FC2AE4159C00CAE8AB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E913EAD42AE5D31600285CE9 /* SwiftyTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyTree.swift; sourceTree = "<group>"; };
+		E960AEAB2AE5D600002BBB0F /* TreeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E913EAD12AE5D2BA00285CE9 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				E90023FC2AE4159C00CAE8AB /* main.swift */,
+				E913EAD42AE5D31600285CE9 /* SwiftyTree.swift */,
+				E960AEAB2AE5D600002BBB0F /* TreeGenerator.swift */,
 			);
 			path = SwiftyTree;
 			sourceTree = "<group>";
@@ -78,6 +86,9 @@
 			dependencies = (
 			);
 			name = SwiftyTree;
+			packageProductDependencies = (
+				E913EAD02AE5D2BA00285CE9 /* ArgumentParser */,
+			);
 			productName = SwiftyTree;
 			productReference = E90023F92AE4159C00CAE8AB /* SwiftyTree */;
 			productType = "com.apple.product-type.tool";
@@ -106,6 +117,9 @@
 				Base,
 			);
 			mainGroup = E90023F02AE4159C00CAE8AB;
+			packageReferences = (
+				E913EACF2AE5D2BA00285CE9 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = E90023FA2AE4159C00CAE8AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -121,6 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E90023FD2AE4159C00CAE8AB /* main.swift in Sources */,
+				E913EAD52AE5D31600285CE9 /* SwiftyTree.swift in Sources */,
+				E960AEAC2AE5D600002BBB0F /* TreeGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +305,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E913EACF2AE5D2BA00285CE9 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E913EAD02AE5D2BA00285CE9 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E913EACF2AE5D2BA00285CE9 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E90023F12AE4159C00CAE8AB /* Project object */;
 }
