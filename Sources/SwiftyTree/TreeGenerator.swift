@@ -21,7 +21,7 @@ struct TreeGenerator {
     }
     
     func generate(url: URL, depth: Int, parent: String = "") throws {
-        let contents = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: includesHidden ? [] : [.skipsHiddenFiles])
+        let contents = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: includesHidden ? [] : [.skipsHiddenFiles]).sorted(by: { $0.lastPathComponent < $1.lastPathComponent })
         let spacer = parent.isEmpty ? "" : "   "
         try contents.forEach { content in
             let suffix = content == contents.last && !content.hasDirectoryPath ? "└──" : "├──"
