@@ -23,22 +23,22 @@ $ ./install.sh /usr/local/bin
 ```
 Groot should now be installed on /usr/local/bin and can be accessed via terminal.
 ```
-$ swifty-tree
+$ groot
 ```
 
 ### Usage
 
 ```
-$ swifty-tree --help
+$ groot --help
 
-USAGE: swifty-tree [--path <path>] [--depth <depth>] [--hidden <hidden>]
+USAGE: groot [--path <path>] [--depth <depth>] [--hidden <hidden>]
 
 OPTIONS:
   -p, --path <path>       The directory path
   -d, --depth <depth>     The depth of the generated tree (default: 100)
-  -h, --hidden <hidden>   Defines if generated tree includes hidden files.
-                          (default: false)
+  -h, --hidden <hidden>   Defines if generated tree includes hidden files. (default: false)
   -h, --help              Show help information.
+
 ```
 
 ### Output Example
