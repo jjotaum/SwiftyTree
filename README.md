@@ -1,24 +1,27 @@
-# SwiftyTree
+# Groot
 A command like tool to generate Tree representation from a given directory path
 
 ### Installation
 
-Clone SwiftyTree on your machine:
+Clone Groot on your machine:
 
 ```
-$ git clone https://github.com/jjotaum/SwiftyTree.git
+$ git clone https://github.com/jjotaum/Groot.git
 ```
 Navigate to it's directory:
 
 ```
-$ cd SwiftyTree
+$ cd Groot
 ```
 
 Execute install script
+
+Run install script using a directory as parameter e.g: /usr/local/bin
+
 ```
-$ ./install.sh
+$ ./install.sh /usr/local/bin
 ```
-SwiftyTree should now be installed on /usr/local/bin and can be accessed via terminal.
+Groot should now be installed on /usr/local/bin and can be accessed via terminal.
 ```
 $ swifty-tree
 ```
@@ -42,16 +45,16 @@ OPTIONS:
 
 ```
 ├── LICENSE
-├── install.sh
-├── Tests
-│   ├── SwiftyTreeTests
-│   │   └── SwiftyTreeTests.swift
-├── README.md
 ├── Package.resolved
 ├── Package.swift
+├── README.md
 ├── Sources
-│   ├── SwiftyTree
+│   ├── Groot
+│   │   ├── Groot.swift
 │   │   ├── TreeGenerator.swift
-│   │   ├── SwiftyTree.swift
 │   │   └── main.swift
+├── Tests
+│   ├── GrootTests
+│   │   └── GrootTests.swift
+└── install.sh
 ```

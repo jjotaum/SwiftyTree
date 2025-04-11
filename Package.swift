@@ -4,24 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftyTree",
+    name: "Groot",
     platforms: [
         .macOS(.v10_15)
     ],
     products: [
-        .executable(name: "SwiftyTree", targets: ["SwiftyTree"])
+        .executable(name: "Groot", targets: ["Groot"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0")
     ],
     targets: [
         .executableTarget(
-            name: "SwiftyTree",
+            name: "Groot",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
         ]),
         .testTarget(
-            name: "SwiftyTreeTests",
-            dependencies: ["SwiftyTree"])
+            name: "GrootTests",
+            dependencies: ["Groot"])
     ]
 )

@@ -1,6 +1,6 @@
 //
-//  SwiftyTree.swift
-//  SwiftyTree
+//  Groot.swift
+//  Groot
 //
 //  Created by Jota Uribe on 22/10/23.
 //
@@ -8,7 +8,7 @@
 import ArgumentParser
 import Foundation
 
-struct SwiftyTree: ParsableCommand {
+struct Groot: ParsableCommand {
     @Option(name: .shortAndLong, help: "The directory path")
     private var path: String?
     @Option(name: .shortAndLong, help: "The depth of the generated tree")
