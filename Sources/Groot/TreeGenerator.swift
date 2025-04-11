@@ -1,6 +1,6 @@
 //
 //  TreeGenerator.swift
-//  SwiftyTree
+//  Groot
 //
 //  Created by Jota Uribe on 22/10/23.
 //
