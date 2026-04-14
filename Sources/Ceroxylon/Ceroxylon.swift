@@ -1,6 +1,6 @@
 //
-//  Groot.swift
-//  Groot
+//  Ceroxylon.swift
+//  Ceroxylon
 //
 //  Created by Jota Uribe on 22/10/23.
 //
@@ -8,7 +8,7 @@
 import ArgumentParser
 import Foundation
 
-struct Groot: ParsableCommand {
+struct Ceroxylon: ParsableCommand {
     @Option(name: .shortAndLong, help: "The directory path")
     private var path: String?
     @Option(name: .shortAndLong, help: "The depth of the generated tree")

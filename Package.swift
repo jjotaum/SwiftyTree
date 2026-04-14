@@ -4,24 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "Groot",
+    name: "Ceroxylon",
     platforms: [
         .macOS(.v10_15)
     ],
     products: [
-        .executable(name: "Groot", targets: ["Groot"])
+        .executable(name: "Ceroxylon", targets: ["Ceroxylon"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.0")
     ],
     targets: [
         .executableTarget(
-            name: "Groot",
+            name: "Ceroxylon",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
         ]),
         .testTarget(
-            name: "GrootTests",
-            dependencies: ["Groot"])
+            name: "CeroxylonTests",
+            dependencies: ["Ceroxylon"])
     ]
 )

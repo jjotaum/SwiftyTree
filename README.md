@@ -1,17 +1,21 @@
-# Groot
+# Ceroxylon
 A command like tool to generate Tree representation from a given directory path
+
+### Why the name? 🌴
+
+Ceroxylon is inspired by *Ceroxylon quindiuense*, the Quindio wax palm, which is recognized as the national tree of Colombia. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Ceroxylon_quindiuense).
 
 ### Installation
 
-Clone Groot on your machine:
+Clone Ceroxylon on your machine:
 
 ```
-$ git clone https://github.com/jjotaum/Groot.git
+$ git clone https://github.com/jjotaum/Ceroxylon.git
 ```
 Navigate to it's directory:
 
 ```
-$ cd Groot
+$ cd Ceroxylon
 ```
 
 Execute install script
@@ -21,17 +25,17 @@ Run install script using a directory as parameter e.g: /usr/local/bin
 ```
 $ ./install.sh /usr/local/bin
 ```
-Groot should now be installed on /usr/local/bin and can be accessed via terminal.
+Ceroxylon should now be installed on /usr/local/bin and can be accessed via terminal.
 ```
-$ groot
+$ ceroxylon
 ```
 
 ### Usage
 
 ```
-$ groot --help
+$ ceroxylon --help
 
-USAGE: groot [--path <path>] [--depth <depth>] [--hidden <hidden>]
+USAGE: ceroxylon [--path <path>] [--depth <depth>] [--hidden <hidden>]
 
 OPTIONS:
   -p, --path <path>       The directory path
@@ -49,12 +53,12 @@ OPTIONS:
 ├── Package.swift
 ├── README.md
 ├── Sources
-│   ├── Groot
-│   │   ├── Groot.swift
+│   ├── Ceroxylon
+│   │   ├── Ceroxylon.swift
 │   │   ├── TreeGenerator.swift
 │   │   └── main.swift
 ├── Tests
-│   ├── GrootTests
-│   │   └── GrootTests.swift
+│   ├── CeroxylonTests
+│   │   └── CeroxylonTests.swift
 └── install.sh
 ```
