@@ -28,6 +28,7 @@ $ ./install.sh /usr/local/bin
 Ceroxylon should now be installed on /usr/local/bin and can be accessed via terminal.
 ```
 $ ceroxylon
+$ xylon
 ```
 
 ### Usage
