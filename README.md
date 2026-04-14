@@ -35,12 +35,12 @@ $ ceroxylon
 ```
 $ ceroxylon --help
 
-USAGE: ceroxylon [--path <path>] [--depth <depth>] [--hidden <hidden>]
+USAGE: ceroxylon [--path <path>] [--depth <depth>] [--hidden]
 
 OPTIONS:
   -p, --path <path>       The directory path
   -d, --depth <depth>     The depth of the generated tree (default: 100)
-  -h, --hidden <hidden>   Defines if generated tree includes hidden files. (default: false)
+      --hidden            Includes hidden files in the generated tree.
   -h, --help              Show help information.
 
 ```

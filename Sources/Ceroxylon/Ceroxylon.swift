@@ -13,7 +13,7 @@ struct Ceroxylon: ParsableCommand {
     private var path: String?
     @Option(name: .shortAndLong, help: "The depth of the generated tree")
     private var depth: Int = 100
-    @Option(name: .shortAndLong, help: "Defines if generated tree includes hidden files.")
+    @Flag(name: .long, help: "Includes hidden files in the generated tree.")
     private var hidden: Bool = false
     
     func run() throws {
