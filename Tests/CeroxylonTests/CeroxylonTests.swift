@@ -67,8 +67,8 @@ final class CeroxylonTests: XCTestCase {
 
     private func captureStandardOutput(_ operation: () throws -> Void) throws -> String {
         let pipe = Pipe()
-        let stdout = dup(STDOUT_FILENO)
-        XCTAssertNotEqual(stdout, -1)
+        let savedStdout = dup(STDOUT_FILENO)
+        XCTAssertNotEqual(savedStdout, -1)
 
         fflush(stdout)
         dup2(pipe.fileHandleForWriting.fileDescriptor, STDOUT_FILENO)
@@ -77,15 +77,15 @@ final class CeroxylonTests: XCTestCase {
             try operation()
         } catch {
             fflush(stdout)
-            dup2(stdout, STDOUT_FILENO)
-            close(stdout)
+            dup2(savedStdout, STDOUT_FILENO)
+            close(savedStdout)
             pipe.fileHandleForWriting.closeFile()
             throw error
         }
 
         fflush(stdout)
-        dup2(stdout, STDOUT_FILENO)
-        close(stdout)
+        dup2(savedStdout, STDOUT_FILENO)
+        close(savedStdout)
         pipe.fileHandleForWriting.closeFile()
 
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
