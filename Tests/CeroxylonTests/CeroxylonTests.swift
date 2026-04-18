@@ -24,9 +24,9 @@ final class CeroxylonTests: XCTestCase {
             output,
             """
             ```
-            ├── alpha
+            ├── alpha/
             │   └── a.txt
-            └── beta
+            └── beta/
                 └── b.txt
             ```
             """
@@ -51,7 +51,7 @@ final class CeroxylonTests: XCTestCase {
             output,
             """
             ```
-            └── folder
+            └── folder/
             ```
             """
         )
@@ -80,7 +80,7 @@ final class CeroxylonTests: XCTestCase {
             output,
             """
             ```
-            └── docs
+            └── docs/
                 └── guide.md
             ```
             """
@@ -110,7 +110,7 @@ final class CeroxylonTests: XCTestCase {
             """
             ```
             ├── README.md
-            └── folder
+            └── folder/
 
             1 directory, 1 file
             ```

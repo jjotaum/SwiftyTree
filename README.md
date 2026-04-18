@@ -55,18 +55,20 @@ By default, Ceroxylon uses the current working directory when `--path` is not pr
 $ ceroxylon --summary
 ```
 
+Directories are suffixed with `/` to make the tree easier to scan.
+
 ```
 ├── LICENSE
 ├── Package.resolved
 ├── Package.swift
 ├── README.md
-├── Sources
-│   └── Ceroxylon
+├── Sources/
+│   └── Ceroxylon/
 │       ├── Ceroxylon.swift
 │       ├── TreeGenerator.swift
 │       └── main.swift
-├── Tests
-│   └── CeroxylonTests
+├── Tests/
+│   └── CeroxylonTests/
 │       └── CeroxylonTests.swift
 └── install.sh
 

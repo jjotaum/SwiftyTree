@@ -36,11 +36,12 @@ struct TreeGenerator {
         for (index, content) in contents.enumerated() {
             let isLast = index == contents.count - 1
             let branch = isLast ? "└── " : "├── "
-            print("\(prefix)\(branch)\(content.lastPathComponent)")
             if content.hasDirectoryPath {
                 summary.directories += 1
+                print("\(prefix)\(branch)\(content.lastPathComponent)/")
             } else {
                 summary.files += 1
+                print("\(prefix)\(branch)\(content.lastPathComponent)")
             }
 
             guard depth > .zero && content.hasDirectoryPath else { continue }
