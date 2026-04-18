@@ -21,13 +21,11 @@ struct TreeGenerator {
     
     func generate() throws {
         let url = URL(fileURLWithPath: path)
-        print("```")
         let summary = try generate(url: url, depth: depth, prefix: "")
         if includesSummary {
             print("")
             print("\(summary.directories) director\(summary.directories == 1 ? "y" : "ies"), \(summary.files) file\(summary.files == 1 ? "" : "s")")
         }
-        print("```")
     }
     
     func generate(url: URL, depth: Int, prefix: String) throws -> Summary {

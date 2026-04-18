@@ -23,12 +23,10 @@ final class CeroxylonTests: XCTestCase {
         XCTAssertEqual(
             output,
             """
-            ```
             ├── alpha/
             │   └── a.txt
             └── beta/
                 └── b.txt
-            ```
             """
         )
     }
@@ -50,9 +48,7 @@ final class CeroxylonTests: XCTestCase {
         XCTAssertEqual(
             output,
             """
-            ```
             └── folder/
-            ```
             """
         )
     }
@@ -79,15 +75,13 @@ final class CeroxylonTests: XCTestCase {
         XCTAssertEqual(
             output,
             """
-            ```
             └── docs/
                 └── guide.md
-            ```
             """
         )
     }
 
-    func testIncludesSummaryInsideGeneratedMarkdownWhenEnabled() throws {
+    func testIncludesSummaryInTerminalOutputWhenEnabled() throws {
         let root = try makeTemporaryDirectory()
         let folder = root.appendingPathComponent("folder", isDirectory: true)
         try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
@@ -108,12 +102,10 @@ final class CeroxylonTests: XCTestCase {
         XCTAssertEqual(
             output,
             """
-            ```
             ├── README.md
             └── folder/
 
             1 directory, 1 file
-            ```
             """
         )
     }
