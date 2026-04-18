@@ -14,7 +14,7 @@ struct TreeGenerator {
     let includesHidden: Bool
     
     func generate() throws {
-        guard let url = URL(string: path) else { throw URLError(.badURL) }
+        let url = URL(fileURLWithPath: path)
         print("```")
         try generate(url: url, depth: depth, prefix: "")
         print("```")

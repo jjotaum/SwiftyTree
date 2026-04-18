@@ -1,5 +1,5 @@
 # Ceroxylon
-A command like tool to generate Tree representation from a given directory path
+A command-line tool that generates a tree representation of a directory.
 
 ### Why the name? 🌴
 
@@ -7,25 +7,25 @@ Ceroxylon is inspired by *Ceroxylon quindiuense*, the Quindio wax palm, which is
 
 ### Installation
 
-Clone Ceroxylon on your machine:
+Clone Ceroxylon to your machine:
 
 ```
 $ git clone https://github.com/jjotaum/Ceroxylon.git
 ```
-Navigate to it's directory:
+Navigate to its directory:
 
 ```
 $ cd Ceroxylon
 ```
 
-Execute install script
+Run the install script.
 
-Run install script using a directory as parameter e.g: /usr/local/bin
+Pass the destination directory as an argument, for example `/usr/local/bin`:
 
 ```
 $ ./install.sh /usr/local/bin
 ```
-Ceroxylon should now be installed on /usr/local/bin and can be accessed via terminal.
+Ceroxylon should now be installed in `/usr/local/bin` and available from your terminal:
 ```
 $ ceroxylon
 $ xylon
@@ -46,6 +46,8 @@ OPTIONS:
 
 ```
 
+By default, Ceroxylon uses the current working directory when `--path` is not provided.
+
 ### Output Example
 
 ```
@@ -54,12 +56,12 @@ OPTIONS:
 ├── Package.swift
 ├── README.md
 ├── Sources
-│   ├── Ceroxylon
-│   │   ├── Ceroxylon.swift
-│   │   ├── TreeGenerator.swift
-│   │   └── main.swift
+│   └── Ceroxylon
+│       ├── Ceroxylon.swift
+│       ├── TreeGenerator.swift
+│       └── main.swift
 ├── Tests
-│   ├── CeroxylonTests
-│   │   └── CeroxylonTests.swift
+│   └── CeroxylonTests
+│       └── CeroxylonTests.swift
 └── install.sh
 ```

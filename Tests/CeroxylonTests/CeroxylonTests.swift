@@ -55,6 +55,35 @@ final class CeroxylonTests: XCTestCase {
         )
     }
 
+    func testGeneratesTreeForLocalFilesystemPath() throws {
+        let parent = try makeTemporaryDirectory()
+        let root = parent.appendingPathComponent("folder with spaces", isDirectory: true)
+        let nestedDirectory = root.appendingPathComponent("docs", isDirectory: true)
+        try FileManager.default.createDirectory(at: nestedDirectory, withIntermediateDirectories: true)
+        FileManager.default.createFile(
+            atPath: nestedDirectory.appendingPathComponent("guide.md").path,
+            contents: Data()
+        )
+
+        let output = try captureStandardOutput {
+            try TreeGenerator(
+                path: root.path,
+                depth: 10,
+                includesHidden: false
+            ).generate()
+        }
+
+        XCTAssertEqual(
+            output,
+            """
+            ```
+            └── docs
+                └── guide.md
+            ```
+            """
+        )
+    }
+
     private func makeTemporaryDirectory() throws -> URL {
         let url = FileManager.default.temporaryDirectory
             .appendingPathComponent(UUID().uuidString, isDirectory: true)
