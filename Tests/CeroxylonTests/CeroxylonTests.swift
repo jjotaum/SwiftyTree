@@ -15,7 +15,8 @@ final class CeroxylonTests: XCTestCase {
             try TreeGenerator(
                 path: root.path,
                 depth: 10,
-                includesHidden: false
+                includesHidden: false,
+                includesSummary: false
             ).generate()
         }
 
@@ -41,7 +42,8 @@ final class CeroxylonTests: XCTestCase {
             try TreeGenerator(
                 path: root.path,
                 depth: 10,
-                includesHidden: false
+                includesHidden: false,
+                includesSummary: false
             ).generate()
         }
 
@@ -69,7 +71,8 @@ final class CeroxylonTests: XCTestCase {
             try TreeGenerator(
                 path: root.path,
                 depth: 10,
-                includesHidden: false
+                includesHidden: false,
+                includesSummary: false
             ).generate()
         }
 
@@ -79,6 +82,37 @@ final class CeroxylonTests: XCTestCase {
             ```
             └── docs
                 └── guide.md
+            ```
+            """
+        )
+    }
+
+    func testIncludesSummaryInsideGeneratedMarkdownWhenEnabled() throws {
+        let root = try makeTemporaryDirectory()
+        let folder = root.appendingPathComponent("folder", isDirectory: true)
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        FileManager.default.createFile(
+            atPath: root.appendingPathComponent("README.md").path,
+            contents: Data()
+        )
+
+        let output = try captureStandardOutput {
+            try TreeGenerator(
+                path: root.path,
+                depth: 10,
+                includesHidden: false,
+                includesSummary: true
+            ).generate()
+        }
+
+        XCTAssertEqual(
+            output,
+            """
+            ```
+            ├── README.md
+            └── folder
+
+            1 directory, 1 file
             ```
             """
         )

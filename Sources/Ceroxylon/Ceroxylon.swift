@@ -15,12 +15,15 @@ struct Ceroxylon: ParsableCommand {
     private var depth: Int = 100
     @Flag(name: .long, help: "Includes hidden files in the generated tree.")
     private var hidden: Bool = false
+    @Flag(name: .long, help: "Appends a summary of directories and files to the generated Markdown.")
+    private var summary: Bool = false
     
     func run() throws {
         let generator = TreeGenerator(
             path: path ?? FileManager.default.currentDirectoryPath,
             depth: depth,
-            includesHidden: hidden
+            includesHidden: hidden,
+            includesSummary: summary
         )
         try generator.generate()
     }

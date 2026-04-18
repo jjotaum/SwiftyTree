@@ -36,19 +36,24 @@ $ xylon
 ```
 $ ceroxylon --help
 
-USAGE: ceroxylon [--path <path>] [--depth <depth>] [--hidden]
+USAGE: ceroxylon [--path <path>] [--depth <depth>] [--hidden] [--summary]
 
 OPTIONS:
   -p, --path <path>       The directory path
   -d, --depth <depth>     The depth of the generated tree (default: 100)
       --hidden            Includes hidden files in the generated tree.
+      --summary           Appends a summary of directories and files to the generated Markdown.
   -h, --help              Show help information.
 
 ```
 
-By default, Ceroxylon uses the current working directory when `--path` is not provided.
+By default, Ceroxylon uses the current working directory when `--path` is not provided. Add `--summary` to include a footer with the number of directories and files inside the generated Markdown block.
 
 ### Output Example
+
+```
+$ ceroxylon --summary
+```
 
 ```
 ├── LICENSE
@@ -64,4 +69,6 @@ By default, Ceroxylon uses the current working directory when `--path` is not pr
 │   └── CeroxylonTests
 │       └── CeroxylonTests.swift
 └── install.sh
+
+3 directories, 8 files
 ```
