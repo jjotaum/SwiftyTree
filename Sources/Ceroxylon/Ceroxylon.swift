@@ -15,12 +15,18 @@ struct Ceroxylon: ParsableCommand {
     private var depth: Int = 100
     @Flag(name: .long, help: "Includes hidden files in the generated tree.")
     private var hidden: Bool = false
+    @Flag(name: .long, help: "Adds icons for known package, archive, and code files.")
+    private var pretty: Bool = false
+    @Flag(name: .long, help: "Appends a summary of directories and files to the output.")
+    private var summary: Bool = false
     
     func run() throws {
         let generator = TreeGenerator(
             path: path ?? FileManager.default.currentDirectoryPath,
             depth: depth,
-            includesHidden: hidden
+            includesHidden: hidden,
+            isPretty: pretty,
+            includesSummary: summary
         )
         try generator.generate()
     }
