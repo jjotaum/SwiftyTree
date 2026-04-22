@@ -17,6 +17,7 @@ struct TreeGenerator {
     let path: String
     let depth: Int
     let includesHidden: Bool
+    let isPretty: Bool
     let includesSummary: Bool
     
     func generate() throws {
@@ -36,10 +37,10 @@ struct TreeGenerator {
             let branch = isLast ? "└── " : "├── "
             if content.hasDirectoryPath {
                 summary.directories += 1
-                print("\(prefix)\(branch)\(content.lastPathComponent)/")
+                print("\(prefix)\(branch)\(displayName(for: content, isDirectory: true))/")
             } else {
                 summary.files += 1
-                print("\(prefix)\(branch)\(content.lastPathComponent)")
+                print("\(prefix)\(branch)\(displayName(for: content, isDirectory: false))")
             }
 
             guard depth > .zero && content.hasDirectoryPath else { continue }
@@ -49,5 +50,43 @@ struct TreeGenerator {
             summary.files += childSummary.files
         }
         return summary
+    }
+
+    private func displayName(for url: URL, isDirectory: Bool) -> String {
+        let name = url.lastPathComponent
+        guard isPretty else { return name }
+        if isDirectory {
+            return "\(Constants.directoryIcon) \(name)"
+        }
+        if Self.matchesExtension(in: name, against: Constants.packageExtensions) {
+            return "\(Constants.packageIcon) \(name)"
+        }
+        if Self.matchesSettingsFile(name) {
+            return "\(Constants.settingsIcon) \(name)"
+        }
+        if Self.matchesExtension(in: name, against: Constants.imageExtensions) {
+            return "\(Constants.imageIcon) \(name)"
+        }
+        if Self.matchesExtension(in: name, against: Constants.videoExtensions) {
+            return "\(Constants.videoIcon) \(name)"
+        }
+        if Self.matchesExtension(in: name, against: Constants.codeExtensions) {
+            return "\(Constants.codeIcon) \(name)"
+        }
+        if Self.matchesExtension(in: name, against: Constants.textDocumentExtensions) {
+            return "\(Constants.textDocumentIcon) \(name)"
+        }
+        return "\(Constants.unknownFileIcon) \(name)"
+    }
+
+    private static func matchesExtension(in name: String, against extensions: [String]) -> Bool {
+        let lowercaseName = name.lowercased()
+        return extensions.contains { lowercaseName.hasSuffix($0) }
+    }
+
+    private static func matchesSettingsFile(_ name: String) -> Bool {
+        let lowercaseName = name.lowercased()
+        return Constants.settingsFileNames.contains(lowercaseName)
+            || matchesExtension(in: lowercaseName, against: Constants.settingsExtensions)
     }
 }
